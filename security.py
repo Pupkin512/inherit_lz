@@ -18,7 +18,7 @@ class Authorization(Login):
     def hashing_pass(self):
         import hashlib
         if self.hash_algorithm == 'sha512':
-            self.password = hashlib.sha256(self.password.encode('utf-8')).hexdigest()
+            self.password = hashlib.sha512(self.password.encode('utf-8')).hexdigest()
         elif self.hash_algorithm == 'md5':
             self.password = hashlib.md5(self.password.encode('utf-8')).hexdigest()
         else:
